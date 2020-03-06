@@ -15,13 +15,40 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update
 
 # Install external dependencies
-RUN apt-get install curl -y
-RUN apt-get install gnupg -y
-RUN apt-get install yarn -y
+RUN apt-get -y install --no-install-recommends \
+    git \
+    openssh-client \
+    less \
+    iproute2 \
+    procps \
+    curl \
+    wget \
+    unzip \
+    lsb-release \
+    ca-certificates \
+    apt-transport-https \
+    libc6 \
+    libgcc1 \
+    libgssapi-krb5-2 \
+    libicu[0-9][0-9] \
+    liblttng-ust0 \
+    libssl1.1 \
+    libstdc++6 \
+    zlib1g \
+    gnupg \
+    zsh
 
-# Set up registry for yarn
+# Set up registry for yarn and install it
 RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
 RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
+RUN apt-get install yarn -y
+
+# Set up zsh
+RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+RUN cp -R /root/.oh-my-zsh /home/$USERNAME
+RUN cp /root/.zshrc /home/$USERNAME
+RUN sed -i -e "s/\/root\/.oh-my-zsh/\/home\/$USERNAME\/.oh-my-zsh/g" /home/$USERNAME/.zshrc
+RUN chown -R $USER_UID:$USER_GID /home/$USERNAME/.oh-my-zsh /home/$USERNAME/.zshrc
 
 # Fetch nvm source
 RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
