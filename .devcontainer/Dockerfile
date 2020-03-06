@@ -11,15 +11,17 @@ ARG USER_GID=$USER_UID
 # Avoid warnings by switching to noninteractive
 ENV DEBIAN_FRONTEND=noninteractive
 
+# Update apt
+RUN apt-get update
+
+# Install external dependencies
+RUN apt-get install curl -y
+RUN apt-get install gnupg -y
+RUN apt-get install yarn -y
+
 # Set up registry for yarn
-RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
-RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
+RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
 
 # Fetch nvm source
 RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
-
-# Update apt
-RUN sudo apt update
-
-# Install external dependencies from 
-RUN sudo apt install yarn
