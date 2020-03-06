@@ -1,11 +1,20 @@
 {
   "name": "vs-online-nodejs-starter",
   "version": "1.0.0",
-  "description": "",
+  "description": "This project is a starter for Node.js developers to use VS Online with a more optimized environment.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cutenode/vs-online-nodejs-starter.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/cutenode/vs-online-nodejs-starter/issues"
+  },
+  "homepage": "https://github.com/cutenode/vs-online-nodejs-starter#readme"
 }
