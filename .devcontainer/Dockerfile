@@ -1,18 +1,11 @@
 FROM ubuntu:latest
 
-# This Dockerfile adds a non-root user with sudo access. Use the "remoteUser"
-# property in devcontainer.json to use it. On Linux, the container user's GID/UIDs
-# will be updated to match your local UID/GID (when using the dockerFile property).
-# See https://aka.ms/vscode-remote/containers/non-root-user for details.
-ARG USERNAME=remoteUser
-ARG USER_UID=1000
-ARG USER_GID=$USER_UID
-
 # Avoid warnings by switching to noninteractive
 ENV DEBIAN_FRONTEND=noninteractive
 
 # Update apt
 RUN apt-get update
+RUN apt-get install
 
 # Install external dependencies
 RUN apt-get -y install --no-install-recommends \
@@ -29,9 +22,6 @@ RUN apt-get -y install --no-install-recommends \
     apt-transport-https \
     libc6 \
     libgcc1 \
-    libgssapi-krb5-2 \
-    libicu[0-9][0-9] \
-    liblttng-ust0 \
     libssl1.1 \
     libstdc++6 \
     zlib1g \
@@ -41,7 +31,7 @@ RUN apt-get -y install --no-install-recommends \
 # Set up registry for yarn and install it
 RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
 RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
-RUN apt-get install yarn -y
+RUN apt-get install yarn -y --no-install-recommends
 
 # Set up zsh
 RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
@@ -52,3 +42,6 @@ RUN chown -R $USER_UID:$USER_GID /home/$USERNAME/.oh-my-zsh /home/$USERNAME/.zsh
 
 # Fetch nvm source
 RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+
+# Switch back to dialog for any ad-hoc use of apt-get
+ENV DEBIAN_FRONTEND=dialog
