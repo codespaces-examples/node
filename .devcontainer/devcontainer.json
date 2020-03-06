@@ -8,5 +8,5 @@
         "eamodio.gitlens",
         "vscode-icons-team.vscode-icons"
     ],
-    "dockerFile": "."
+    "dockerFile": "Dockerfile"
 }
