@@ -1,12 +1,13 @@
 {
     "name": "Node.js Starter",
     "extensions": [
-        "github.vscode-pull-request-github",
-        "ms-vsliveshare.vsliveshare",
-        "visualstudioexptteam.vscodeintellicode",
         "coenraads.bracket-pair-colorizer-2",
         "eamodio.gitlens",
-        "vscode-icons-team.vscode-icons"
+        "github.vscode-pull-request-github",
+        "ms-azuretools.vscode-docker",
+        "ms-vsliveshare.vsliveshare",
+        "vscode-icons-team.vscode-icons",
+        "visualstudioexptteam.vscodeintellicode"
     ],
     "dockerFile": "Dockerfile"
 }
