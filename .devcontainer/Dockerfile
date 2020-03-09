@@ -1,9 +1,7 @@
 FROM ubuntu:latest
 
-# Avoid warnings by switching to noninteractive
-ENV DEBIAN_FRONTEND=noninteractive
+WORKDIR /home/
 
-RUN bash setup.sh
+COPY . .
 
-# Switch back to dialog for any ad-hoc use of apt-get
-ENV DEBIAN_FRONTEND=dialog
+RUN bash ./setup.sh
