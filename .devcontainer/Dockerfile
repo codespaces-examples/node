@@ -6,4 +6,4 @@ COPY . .
 
 RUN bash ./setup.sh
 
-ENV SHELL /bin/zsh
+ENV SHELL /usr/bin/zsh
