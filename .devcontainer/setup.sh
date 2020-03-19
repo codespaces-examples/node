@@ -5,12 +5,12 @@ apt-get install -y \
   jq \
   zsh
 
-useradd -m developer
-su developer
-
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
 echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
 apt-get install yarn -y --no-install-recommends
+
+useradd -m developer
+su developer
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 cp -R /root/.oh-my-zsh /home/$USERNAME
