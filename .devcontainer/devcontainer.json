@@ -1,5 +1,5 @@
 {
-    "name": "Node.js Starter",
+    "name": "Codespaces Node.js Starter",
     "extensions": [
         "coenraads.bracket-pair-colorizer-2",
         "eamodio.gitlens",
