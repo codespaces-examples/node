@@ -4,7 +4,6 @@ apt-get install -y \
   curl \
   git \
   gnupg2 \
-  hub \
   jq \
   sudo \
   zsh
