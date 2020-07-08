@@ -16,8 +16,8 @@ apt-get update && apt-get install yarn -y
 # instsal nvm
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
 
-# install `gh` CLI
-./install-gh-cli.sh
+# install `hub` CLI
+snap install hub --classic
 
 # setup and install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
