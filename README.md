@@ -18,10 +18,10 @@ This is an opinionated environment that should be ready to use as a day-to-day d
 - [curl/curl](https://github.com/curl/curl): the command line tool for transferring data over a metric boatload of protocols. 
 - git: the Git SCM tool.
 - [gnupg2](https://gnupg.org/): a complete and free implementatiuon of the OpenPGP standard.
-- [stedolan/jq](https://github.com/stedolan/jq) - a command line JSON parser.
-- [sudo](https://www.sudo.ws/) - the superuser authority delegation tool.
-- [zsh](https://www.zsh.org/) - interactive terminal (alternative to `bash`).
-- [ohmyzsh/ohmyzsh](https://github.com/ohmyzsh/ohmyzsh) - a delightful community driven framework for managing zsh config.
+- [stedolan/jq](https://github.com/stedolan/jq): a command line JSON parser.
+- [sudo](https://www.sudo.ws/): the superuser authority delegation tool.
+- [zsh](https://www.zsh.org/): interactive terminal (alternative to `bash`).
+- [ohmyzsh/ohmyzsh](https://github.com/ohmyzsh/ohmyzsh): a delightful community driven framework for managing zsh config.
 
 ### VS Code Extensions
 
