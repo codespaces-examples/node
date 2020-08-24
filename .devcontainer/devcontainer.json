@@ -2,6 +2,7 @@
     "name": "Codespaces Node.js Starter",
     "extensions": [
         "coenraads.bracket-pair-colorizer-2",
+        "cschleiden.vscode-github-actions",
         "eamodio.gitlens",
         "github.vscode-pull-request-github",
         "ms-azuretools.vscode-docker",
