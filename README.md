@@ -45,7 +45,7 @@ This is an opinionated environment that should be ready to use as a day-to-day d
 
 For usage in VS Codespaces, you're going to want to head over to [online.visualstudio.com](https://online.visualstudio.com) and sign up for VS Codespaces (that process is outside the scope of these instructions). Once you've got an account and are signed in to [online.visualstudio.com](https://online.visualstudio.com), you're going to take the following steps:
 
-- Ensure you're on the `/environments` page at [online.visualstudio.com/environments](https://online.visualstudio.comenvironments)
+- Ensure you're on the `/environments` page at [online.visualstudio.com/environments](https://online.visualstudio.com/environments)
 - In the top right corner, there'll be a "Create environment" button. Click this button, which will open up a panel from the right side of the screen. Fill in the details of this panel:
   - **Environment Name:** This will be the visible name of your environment within Codespaces. The value here doesn't particularly matter - I'm going to use `tinycloud`.
   - **Git Repository:** This is going to be either the URL you'd `git clone` the repo from or the GitHub `<org OR user>/<repo>` shorthand. For this repo, the easier value would be `cutenode/codespaces-nodejs-starter`.
